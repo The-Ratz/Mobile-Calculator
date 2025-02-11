@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.children
 import com.hadirahimi.calculator.databinding.ActivityMainBinding
 import net.objecthunter.exp4j.ExpressionBuilder
+import android.content.Intent
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,6 +20,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val bntCoin = findViewById<Button>(R.id.btnCoin)
+        bntCoin.setOnClickListener {
+            val intent = Intent(this,MainActivity2::class.java)
+            startActivity(intent)
+        }
 
         // NoLimitScreen
         window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
@@ -65,3 +72,46 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
