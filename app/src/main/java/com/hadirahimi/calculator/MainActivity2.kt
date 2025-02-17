@@ -1,5 +1,6 @@
 package com.hadirahimi.calculator
 
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
@@ -7,9 +8,17 @@ import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.github.mikephil.charting.charts.LineChart
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import com.github.mikephil.charting.components.Description
+import com.github.mikephil.charting.components.XAxis
+import com.github.mikephil.charting.components.YAxis
+import com.github.mikephil.charting.data.Entry
+import com.github.mikephil.charting.data.LineData
+import com.github.mikephil.charting.data.LineDataSet
+import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 
 class MainActivity2 : AppCompatActivity() {
 
@@ -25,6 +34,9 @@ class MainActivity2 : AppCompatActivity() {
         val button = findViewById<Button>(R.id.actionButton)
         val inputText = findViewById<EditText>(R.id.inputText)
         val outputText = findViewById<TextView>(R.id.outputText)
+
+        lateinit var lineChart: LineChart
+        lateinit var xValues: List<String>
 
         call.enqueue(object : Callback<Coins> {
             override fun onResponse(call: Call<Coins>, response: Response<Coins>) {
@@ -69,6 +81,59 @@ class MainActivity2 : AppCompatActivity() {
                     // Lidar com falha
                 }
             })
+
+            lineChart = findViewById(R.id.chart)
+
+            // Oculta os rótulos do eixo direito
+            lineChart.axisRight.setDrawLabels(false)
+
+            // Valores do eixo X
+            xValues = listOf("Nadun", "Kamal", "Jhon", "Jerry")
+
+            val xAxis: XAxis = lineChart.xAxis
+            xAxis.position = XAxis.XAxisPosition.BOTTOM
+            xAxis.valueFormatter = IndexAxisValueFormatter(xValues)
+            xAxis.labelCount = 4
+            xAxis.granularity = 1f
+
+            // Configuração do eixo Y
+            val yAxis: YAxis = lineChart.axisLeft
+            yAxis.axisMinimum = 0f
+            yAxis.axisMaximum = 100f
+            yAxis.axisLineWidth = 2f
+            yAxis.axisLineColor = Color.WHITE
+            yAxis.setLabelCount(10, false)
+
+            // Dados para o conjunto "Maths"
+            val entries1 = arrayListOf(
+                Entry(0f, 60f),
+                Entry(1f, 70f),
+                Entry(2f, 85f),
+                Entry(3f, 95f)
+            )
+
+            // Dados para o conjunto "Science"
+            val entries2 = arrayListOf(
+                Entry(0f, 50f),
+                Entry(1f, 85f),
+                Entry(2f, 65f),
+                Entry(3f, 80f)
+            )
+
+            // Configurando os conjuntos de dados
+            val dataSet1 = LineDataSet(entries1, "Maths").apply {
+                color = Color.BLUE
+            }
+            val dataSet2 = LineDataSet(entries2, "Science").apply {
+                color = Color.RED
+            }
+
+            // Configurando os dados do gráfico
+            val lineData = LineData(dataSet1, dataSet2)
+            lineChart.data = lineData
+
+            // Atualiza o gráfico
+            lineChart.invalidate()
         }
 
     }
