@@ -8,10 +8,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="back1">#571954</color>
-    <color name="back2">#2C003C</color>
-    <color name="back3">#3D0B45</color>
-    <color name="soft_purple">#623C6F</color>
+    <color name="back1">#2D336B</color>
+    <color name="back2">#A9B5DF</color>
+    <color name="back3">#A9B5DF</color>
+    <color name="soft_white">#FFF2F2</color>
 
 
 </resources>

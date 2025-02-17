@@ -29,23 +29,30 @@
             android:id="@+id/btnCoin"
             android:layout_marginEnd="10dp"
             android:layout_marginTop="20dp"
-            android:gravity="start"
             android:background="@android:color/transparent"
             android:fontFamily="@font/montserrat_medium"
             app:cornerRadius="15dp"
-            android:text="coin"
-            app:iconPadding="8dp"/>
+            app:icon="@drawable/money"
+            app:iconPadding="8dp"
+            app:iconSize="50dp"
+            app:iconTint="@color/black"/>
     </FrameLayout>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnHistory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Histórico"
         android:layout_margin="16dp"
+        android:background="@android:color/transparent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:cornerRadius="15dp"/>
+        app:cornerRadius="15dp"
+        app:icon="@drawable/test"
+        app:iconPadding="10dp"
+        app:iconSize="50dp"
+        app:iconTint="@color/black"
+        />
+
 
     <!--  formula  -->
     <TextView
@@ -53,10 +60,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/tvFormula"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="80dp"
         android:fontFamily="@font/montserrat_medium"
         android:gravity="end"
-        android:textColor="@color/soft_purple"
+        android:textColor="@color/white"
         android:textSize="30sp"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="formula"/>
@@ -72,7 +79,7 @@
         android:fontFamily="@font/montserrat_medium"
         android:gravity="end"
         android:text="@string/_0"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="50sp"
         app:layout_constraintTop_toBottomOf="@+id/tvFormula"/>
 
@@ -97,9 +104,10 @@
             android:layout_columnSpan="2"
             android:layout_columnWeight="2"
             android:layout_marginEnd="10dp"
-            android:backgroundTint="@color/soft_purple"
+            android:backgroundTint="@color/soft_white"
             android:fontFamily="@font/montserrat_medium"
             android:text="@string/c"
+            android:textColor="@color/black"
             android:textSize="30sp"
             app:cornerRadius="15dp"/>
         <com.google.android.material.button.MaterialButton
@@ -110,9 +118,10 @@
             android:layout_columnSpan="1"
             android:layout_columnWeight="1"
             android:layout_marginEnd="10dp"
-            android:backgroundTint="@color/soft_purple"
+            android:backgroundTint="@color/soft_white"
             android:fontFamily="@font/montserrat_medium"
             android:text="@string/plus"
+            android:textColor="@color/black"
             android:textSize="30sp"
             app:cornerRadius="15dp"/>
         <com.google.android.material.button.MaterialButton
@@ -123,9 +132,10 @@
             android:layout_columnSpan="1"
             android:layout_columnWeight="1"
             android:layout_marginEnd="10dp"
-            android:backgroundTint="@color/soft_purple"
+            android:backgroundTint="@color/soft_white"
             android:fontFamily="@font/montserrat_medium"
             android:text="@string/divide"
+            android:textColor="@color/black"
             android:textSize="30sp"
             app:cornerRadius="15dp"/>
         <com.google.android.material.button.MaterialButton
@@ -175,9 +185,10 @@
             android:layout_columnSpan="1"
             android:layout_columnWeight="1"
             android:layout_marginEnd="10dp"
-            android:backgroundTint="@color/soft_purple"
+            android:backgroundTint="@color/soft_white"
             android:fontFamily="@font/montserrat_medium"
             android:text="@string/multiply"
+            android:textColor="@color/black"
             android:textSize="30sp"
             app:cornerRadius="15dp"/>
         <com.google.android.material.button.MaterialButton
@@ -227,9 +238,10 @@
             android:layout_columnSpan="1"
             android:layout_columnWeight="1"
             android:layout_marginEnd="10dp"
-            android:backgroundTint="@color/soft_purple"
+            android:backgroundTint="@color/soft_white"
             android:fontFamily="@font/montserrat_medium"
             android:text="@string/mines"
+            android:textColor="@color/black"
             android:textSize="30sp"
             app:cornerRadius="15dp"/>
         <com.google.android.material.button.MaterialButton
@@ -280,9 +292,10 @@
             android:layout_columnSpan="1"
             android:layout_columnWeight="1"
             android:layout_marginEnd="10dp"
-            android:backgroundTint="@color/soft_purple"
+            android:backgroundTint="@color/soft_white"
             android:fontFamily="@font/montserrat_medium"
             android:text="@string/equal"
+            android:textColor="@color/black"
             android:textSize="30sp"
             app:cornerRadius="15dp"/>
         <com.google.android.material.button.MaterialButton

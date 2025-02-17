@@ -9,17 +9,40 @@
     android:background="@drawable/background"
     tools:context=".MainActivity2">
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCalc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:background="@android:color/transparent"
+            app:cornerRadius="15dp"
+            app:icon="@drawable/calculate"
+            app:iconPadding="8dp"
+            app:iconSize="50dp"
+            app:iconTint="@color/black" />
+
+    </FrameLayout>
+
     <TextView
         android:id="@+id/titleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Moedas"
         android:textSize="36sp"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintTop_toTopOf="parent"
         android:fontFamily="@font/montserrat_medium"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="80dp"
         android:layout_marginStart="16dp"/>
 
     <!-- Primeiro Spinner com Input -->
@@ -39,7 +62,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColor="@color/white"/>
+            android:textColor="@color/black"/>
 
         <EditText
             android:id="@+id/inputText"
@@ -50,7 +73,7 @@
             android:layout_marginStart="8dp"
             android:textSize="22sp"
             android:inputType="number"
-            android:textColor="@color/white"/>
+            android:textColor="@color/black"/>
     </LinearLayout>
 
     <!-- Segundo Spinner com Output -->
@@ -70,7 +93,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColor="@color/white"/>
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/outputText"
@@ -80,21 +103,8 @@
             android:layout_marginStart="8dp"
             android:textSize="22sp"
             android:fontFamily="@font/montserrat_medium"
-            android:textColor="@color/white"/>
+            android:textColor="@color/black"/>
     </LinearLayout>
-
-    <com.github.mikephil.charting.charts.LineChart
-        android:id="@+id/chart"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/secondGroup"
-        app:layout_constraintBottom_toTopOf="@id/actionButton"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="50dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        app:layout_constraintEnd_toEndOf="parent"/>
 
     <!-- Botão no final -->
     <Button

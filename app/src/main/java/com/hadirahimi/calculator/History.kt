@@ -3,6 +3,7 @@ package com.hadirahimi.calculator
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ListView
 import android.widget.SimpleAdapter
 import androidx.activity.enableEdgeToEdge
@@ -13,6 +14,12 @@ class History : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_history)
+
+        val bntCalc = findViewById<Button>(R.id.btnCalc)
+        bntCalc.setOnClickListener {
+            val intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
+        }
 
         val sharedPreferences = getSharedPreferences("CalcHistory", Context.MODE_PRIVATE)
         val historyString = sharedPreferences.getString("history", "")

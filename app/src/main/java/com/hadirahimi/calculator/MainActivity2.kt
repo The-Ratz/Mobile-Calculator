@@ -1,5 +1,6 @@
 package com.hadirahimi.calculator
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -25,6 +26,12 @@ class MainActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
+
+        val bntCalc = findViewById<Button>(R.id.btnCalc)
+        bntCalc.setOnClickListener {
+            val intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
+        }
 
         val key = "5b6de8009178e5fdd4f103ae"
         val call = ApiClient.apiService.get(key, "USD")
@@ -82,58 +89,6 @@ class MainActivity2 : AppCompatActivity() {
                 }
             })
 
-            lineChart = findViewById(R.id.chart)
-
-            // Oculta os rótulos do eixo direito
-            lineChart.axisRight.setDrawLabels(false)
-
-            // Valores do eixo X
-            xValues = listOf("Nadun", "Kamal", "Jhon", "Jerry")
-
-            val xAxis: XAxis = lineChart.xAxis
-            xAxis.position = XAxis.XAxisPosition.BOTTOM
-            xAxis.valueFormatter = IndexAxisValueFormatter(xValues)
-            xAxis.labelCount = 4
-            xAxis.granularity = 1f
-
-            // Configuração do eixo Y
-            val yAxis: YAxis = lineChart.axisLeft
-            yAxis.axisMinimum = 0f
-            yAxis.axisMaximum = 100f
-            yAxis.axisLineWidth = 2f
-            yAxis.axisLineColor = Color.WHITE
-            yAxis.setLabelCount(10, false)
-
-            // Dados para o conjunto "Maths"
-            val entries1 = arrayListOf(
-                Entry(0f, 60f),
-                Entry(1f, 70f),
-                Entry(2f, 85f),
-                Entry(3f, 95f)
-            )
-
-            // Dados para o conjunto "Science"
-            val entries2 = arrayListOf(
-                Entry(0f, 50f),
-                Entry(1f, 85f),
-                Entry(2f, 65f),
-                Entry(3f, 80f)
-            )
-
-            // Configurando os conjuntos de dados
-            val dataSet1 = LineDataSet(entries1, "Maths").apply {
-                color = Color.BLUE
-            }
-            val dataSet2 = LineDataSet(entries2, "Science").apply {
-                color = Color.RED
-            }
-
-            // Configurando os dados do gráfico
-            val lineData = LineData(dataSet1, dataSet2)
-            lineChart.data = lineData
-
-            // Atualiza o gráfico
-            lineChart.invalidate()
         }
 
     }

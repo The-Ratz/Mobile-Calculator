@@ -2,8 +2,32 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/background"
     android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCalc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:background="@android:color/transparent"
+            app:cornerRadius="15dp"
+            app:icon="@drawable/calculate"
+            app:iconPadding="8dp"
+            app:iconSize="50dp"
+            app:iconTint="@color/black" />
+
+    </FrameLayout>
 
     <ListView
         android:id="@+id/simpleListView"
@@ -12,5 +36,5 @@
         android:divider="@color/material_blue_grey_800"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="30dp"
-        android:dividerHeight="5dp" />
+        android:dividerHeight="5dp"/>
 </LinearLayout>
